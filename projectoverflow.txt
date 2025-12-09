@@ -1,0 +1,22 @@
+1. Run script template.py to create project folder structure.
+2. pip install -r requirements.txt
+
+-- Setting up the infra --
+1. Put SUPABASE_DB_URL (connection string), Pinecone API key and index name in .env
+    # connection string of Supabase can be found using search box on the website and then select session pooler (an not transaction pooler).
+2. Write script for connection establishment and connection pooling of posatgresServer(app/db/checkpointer.py) and vector store making (app/db/vector_store.py).
+3. Write a test_infra.py in root directory to test the connection scripts.
+
+-- Creating ETL (extract, Transform, Load) pipeline (the Ingestion pipeline) --
+1. Write app/graph/ingestion.py script which has two functions 
+    # 1st takes youtube video URL, fetches transcript, converts to document, adds metadata, splits into chunks then saves to Pinecone Vector Store.
+    # 2nd loads a pdf, adds metadata, splits doc into chunks then saves to vecotr store.
+
+-- Adding basic retrieval and advanced retrieval (RAG) -- 
+1. Add app/graph/retrieval.py script which takes a query and finds relevant documents in vector_store.
+2. Add app/graph/advanced_retrieval.py which uses Re-ranker to apply contexual search on top of vector_store's semantically searched documents to find more accurate relevant documents.
+
+
+
+
+

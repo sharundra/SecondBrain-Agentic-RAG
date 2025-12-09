@@ -1,0 +1,13 @@
+langchain-openai
+langchain-community
+langgraph
+langchain-pinecone
+pinecone-client
+psycopg[binary]
+langgraph-checkpoint-postgres
+python-dotenv
+youtube-transcript-api
+pymupdf
+langchain-text-splitters
+flashrank
+
