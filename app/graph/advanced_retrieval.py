@@ -40,4 +40,4 @@ def advanced_search(query : str, k : int = 5, filter_dict : dict = None, score_t
         return []
     
     print(f"--- Selected Top {len(final_results)} most relevant chunks ---")
-    return [res['text'] for res in final_results]
+    return final_results
