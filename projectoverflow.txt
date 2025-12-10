@@ -10,13 +10,18 @@
 -- Creating ETL (extract, Transform, Load) pipeline (the Ingestion pipeline) --
 1. Write app/graph/ingestion.py script which has two functions 
     # 1st takes youtube video URL, fetches transcript, converts to document, adds metadata, splits into chunks then saves to Pinecone Vector Store.
-    # 2nd loads a pdf, adds metadata, splits doc into chunks then saves to vecotr store.
+    # 2nd loads a pdf, adds metadata, splits doc into chunks then saves to vector store.
 
--- Adding basic retrieval and advanced retrieval (RAG) -- 
+-- Adding basic retrieval and advanced retrieval (RAG), the Logic pipeline -- 
 1. Add app/graph/retrieval.py script which takes a query and finds relevant documents in vector_store.
 2. Add app/graph/advanced_retrieval.py which uses Re-ranker to apply contexual search on top of vector_store's semantically searched documents to find more accurate relevant documents.
 
-
+-- Supervisor main graph to manage subgraph search and internet tool search (Orchestration pipeline) --
+1. Create a subgraph(app/graph/subgraphs/rag_graph.py) script to utilize advanced retrieval and then generate text based on retrieved documents.
+2. Create a node script, app/graph/nodes/rag_agent_node.py to invoke above subgraph.
+3. Create another node script, app/graph/nodes/web_search.py to perform a internet search for a query.
+4. Create a supervisor node script, app/graph/nodes/supervisor.py to make a decision for a query regarding whether send that to internet search or database search using subgraph node.
+5. Create the main/parent graph script, app/graph/workflow.py, to manage above created three nodes.
 
 
 

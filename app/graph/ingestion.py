@@ -61,7 +61,7 @@ def ingest_pdf(file_path : str):
 
         vector_store = get_vector_store()
         vector_store.add_documents(docs)
-        print(f"--- Saved to Pinecone Successfully! ---")
+        print("--- Saved to Pinecone Successfully! ---")
         return "Success"
     except Exception as e:
         print(f"Error: {e}")
