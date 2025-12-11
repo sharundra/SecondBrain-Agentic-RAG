@@ -23,5 +23,13 @@
 4. Create a supervisor node script, app/graph/nodes/supervisor.py to make a decision for a query regarding whether send that to internet search or database search using subgraph node.
 5. Create the main/parent graph script, app/graph/workflow.py, to manage above created three nodes.
 
+-- Productionization --
+1. Write a FAST API server script app/api/server.py
+    # Run this command in terminal "uvicorn app.api.server:app --reload" to start the server. "--reload" is there to automatically restart server whenver there is a change in the project code.
+    # Access the "Swagger UI" here, "http://127.0.0.1:8000/docs"
+2. Write a chainlit UI script, app/ui/chat_app.py, which doesn't call FASTAPI(localhost:8000) but rather directly imports LangGraph obejct.
+    # Run this command in mac terminal "chainlit run app/ui/chat_app.py -w" annd it will open a new chatgpt style tab in browser.
+
+
 
 

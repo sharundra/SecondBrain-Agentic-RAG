@@ -10,4 +10,6 @@ youtube-transcript-api
 pymupdf
 langchain-text-splitters
 flashrank
-
+fastapi
+uvicorn[standard]
+chainlit

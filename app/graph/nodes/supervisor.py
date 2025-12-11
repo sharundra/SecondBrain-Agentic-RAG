@@ -10,7 +10,7 @@ class RouteDecision(BaseModel):
         description="Choose 'rag_agent' for technical/saved knowledge. Choose 'web_searcher' for current events/general info. Choose 'FINISH' if it's just a greeting."
     )
 
-llm = ChatOpenAI()
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 structured_llm = llm.with_structured_output(RouteDecision)
 
 def supervisor_node(state : Dict[str, Any]):

@@ -41,7 +41,7 @@ def generation_node(state:RAGState):
 
         Answer:"""
     )
-    llm = ChatOpenAI()
+    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
     chain = prompt | llm | StrOutputParser()
 
