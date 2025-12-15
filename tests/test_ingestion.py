@@ -9,7 +9,8 @@ if __name__ == "__main__":
     # print(result)
 
     # 2. PDF Test
-    PDF_PATH = "Religion of India in 6th century BC (Part 1).pdf" 
+    # PDF_PATH = "Religion of India in 6th century BC (Part 1).pdf" 
+    PDF_PATH = "a fictional scifi story.pdf"
 
     if __name__ == "__main__":
         if os.path.exists(PDF_PATH):

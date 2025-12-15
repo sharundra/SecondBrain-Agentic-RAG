@@ -5,7 +5,7 @@ from app.db.vector_store import get_vector_store
 # 'ms-marco-TinyBERT-L-2-v2' is a famous model which searches for semantic and contexual similarity
 ranker = Ranker(model_name="ms-marco-TinyBERT-L-2-v2", cache_dir="./opt")
 
-def advanced_search(query : str, k : int = 5, filter_dict : dict = None, score_threshold : float = 0.6):
+def advanced_search(query : str, k : int = 5, filter_dict : dict = None, score_threshold : float = 0.1):
     """
     Performs Vector Search + Re-ranking.
     k: Number of final results to return.

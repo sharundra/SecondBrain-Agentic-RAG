@@ -17,7 +17,11 @@ async def get_checkpointer():
     
     connection_kwargs = {
         "autocommit": True,
-        "prepare_threshold" : 0
+        "prepare_threshold" : 0,
+        "keepalives": 1,
+        "keepalives_idle": 5,
+        "keepalives_interval": 2,
+        "keepalives_count": 5
     }
 
     pool = AsyncConnectionPool(conninfo = DB_URI, max_size = 20, kwargs = connection_kwargs)

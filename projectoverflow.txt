@@ -30,6 +30,11 @@
 2. Write a chainlit UI script, app/ui/chat_app.py, which doesn't call FASTAPI(localhost:8000) but rather directly imports LangGraph obejct.
     # Run this command in mac terminal "chainlit run app/ui/chat_app.py -w" annd it will open a new chatgpt style tab in browser.
 
+-- Looping (for multi agentic tasks) and Memory --
+1. Update server.py to add asynchronus PostGres Memory/db inside event loop so that our app can remember older chats.
+2. Update (mainly) workflow.py and supervisor.py to add looping mechanism so that app can handle multiple subqueries in one big query.
+    # New edges will be added from web search tool to main supervisor and rag sub graph to main supervisor/graph.
+
 
 
 

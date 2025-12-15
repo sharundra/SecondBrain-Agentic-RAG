@@ -26,7 +26,10 @@ def generation_node(state:RAGState):
     print("--- RAG Worker: Generating Answer ---")
     question = state['question']
     context_list = state['retrieved_docs']
-    context = "/n/n".join(context_list)
+    if not context_list:
+        # FIX: Return a specific keyword "NOT_FOUND"
+        return {"generated_ans": "NOT_FOUND: I searched the saved documents but found no relevant information."}
+    context = "\n\n".join(context_list)
 
     prompt  = ChatPromptTemplate.from_template(
         """You are a helpful assistant for question-answering tasks. 
